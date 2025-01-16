@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://recrutement-success.com
+
+# Sitemaps
+Sitemap: https://recrutement-success.com/sitemap.xml
