@@ -1,23 +1,24 @@
-import 'react-tooltip/dist/react-tooltip.css';
-import { ReactNode, useEffect, useState } from 'react';
-import { Inter,Poppins } from 'next/font/google';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import NextNProgress from 'nextjs-progressbar';
-import { Toaster } from 'react-hot-toast';
+import "react-tooltip/dist/react-tooltip.css";
+import { ReactNode, useEffect, useState } from "react";
+import { Inter, Poppins } from "next/font/google";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import NextNProgress from "nextjs-progressbar";
+import { Toaster } from "react-hot-toast";
 
-import { Tooltip } from 'react-tooltip';
-import ErrorBoundary from './ErrorBoundary';
-import config from '@/config';
+import { Tooltip } from "react-tooltip";
+import ErrorBoundary from "./ErrorBoundary";
+import config from "@/config";
 
-const font = Poppins({ subsets: ['latin'], weight: ["400", "500", "600", "700"] });
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function Layout({ children }: { children: ReactNode }) {
   const router = useRouter();
   const { data } = useSession();
   const [isMounted, setIsMounted] = useState(false);
-
-
 
   return (
     // Most errors are catched in ErrorBondary to show a nice error page
@@ -28,10 +29,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         }
       `}</style>
       {/* Automatically show a progress bar at the top when navigating between pages */}
-      <NextNProgress
-        color={config.colors.main}
-        options={{ showSpinner: false }}
-      />
+      <NextNProgress color="#FFFFFF" options={{ showSpinner: false }} />
       {children}
       {/* Show Success/Error messages anywhere from the app with toast() */}
       {isMounted && (
@@ -42,7 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       )}
       {/* Show tooltips if any JSX elements has these 2 attributes: data-tooltip-id="tooltip" data-tooltip-content="" */}
-      <Tooltip id='tooltip' className='z-[60] !opacity-100 max-w-sm' />
+      <Tooltip id="tooltip" className="z-[60] !opacity-100 max-w-sm" />
     </ErrorBoundary>
   );
 }

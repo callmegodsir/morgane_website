@@ -18,10 +18,10 @@ export default function Home() {
       <TagSchema />
 
       <main>
-        <Header />
+        
         <Hero />
 
-        <Footer />
+       
       </main>
     </>
   );

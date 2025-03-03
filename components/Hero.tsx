@@ -1,78 +1,79 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Image from "next/image";
-import React from "react";
-import homepage from "@/public/photo_homepage.jpg";
-import CountUp from "react-countup";
-
-export default function Hero() {
+import homepage from "../public/homepage.webp.jpg";
+const Home = () => {
   return (
-    <main className="  overflow-y-auto">
-      {/* Section de l'image avec phrase */}
-      <div className="relative w-full" style={{ height: "60vh" }}>
-        <Image
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      {/* Section Hero */}
+      <div className="relative h-[600px]">
+        <Image 
           src={homepage}
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-70"
+          alt="Bannière MPV Invest"
+          fill
+          className="object-cover"
+          priority
         />
-        <div className="absolute inset-0 flex justify-center items-center mt-20">
-          <h1
-            className="text-lg sm:text-sm md:text-4xl font-semibold text-[#013B94] bg-clip-text text-center mt-20"
-            style={{ backdropFilter: "blur(5px)" }}
-          >
-            Trait d&apos;union entre le recrutement et votre succès
-          </h1>
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4">
+            <h1 className="text-5xl font-bold mb-8">
+              "Construisons ensemble un patrimoine durable.
+              Votre avenir financier, notre priorité."
+            </h1>
+            <p className="text-xl">
+              Chez MPV INVEST, nous mettons à votre service une expertise reconnue dans la gestion de patrimoine pour optimiser vos investissements et assurer un avenir financier serein.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Section des pourcentages avec fond bleu */}
-      <div className="bg-[#013B94] text-white py-10">
-        {" "}
-        {/* Ajustez py pour l'espacement vertical */}
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-            <div className="px-4">
-              <CountUp
-                delay={0.3}
-                end={82}
-                prefix=""
-                suffix="%"
-                className="text-5xl font-bold"
-              />
-              <p className="mt-8 text-justify">
-                des entreprises estiment recruter plus rapidement en passant par
-                un cabinet
-              </p>
-            </div>
+      {/* Ce qui nous distingue */}
+      <div className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Ce qui nous distingue</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center p-6">
+              <h3 className="text-2xl font-bold mb-4">Une double expertise en droit et finance</h3>
 
-            <div className="px-4">
-              <CountUp
-                delay={0.5}
-                end={80}
-                prefix=""
-                suffix="%"
-                className="text-5xl font-bold"
-              />
-              <p className="mt-8 text-justify">
-                de nos recrutements sont effectués en moins de 3 mois
-              </p>
             </div>
-            <div className="px-4">
-              <CountUp
-                delay={0.5}
-                end={75}
-                prefix=""
-                suffix="%"
-                className="text-5xl font-bold"
-              />
-              <p className="mt-8 text-justify">
-                des entreprises nous confient une nouvelle mission dans les 6
-                mois
-              </p>
+            <div className="text-center p-6">
+              <h3 className="text-2xl font-bold mb-4">Une spécialisation en solutions patrimoniales sur mesure</h3>
+         
+            </div>
+            <div className="text-center p-6">
+              <h3 className="text-2xl font-bold mb-4">Une approche personnalisée pour les investisseurs français et internationaux</h3>
+           
             </div>
           </div>
         </div>
       </div>
-    </main>
+
+      {/* Nos engagements */}
+      <div className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Nos engagements</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-4">Transparence et accompagnement sur-mesure</h3>
+              <p className="text-gray-600">Parce que chaque client est unique, nous adaptons nos stratégies à vos besoins spécifiques</p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-4">Performance et sérénité</h3>
+              <p className="text-gray-600">Nous privilégions des solutions à la fois performantes et adaptées à vos objectifs à long terme</p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-4">Innovation et anticipation</h3>
+              <p className="text-gray-600">Nos conseils intègrent les dernières opportunités en matière d'investissement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Home;
