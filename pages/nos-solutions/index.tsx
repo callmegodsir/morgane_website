@@ -65,7 +65,7 @@ const Solutions = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-8">
                     Création sociétale, avec une structuration stratégique et
-                    personnalisée d'entreprises.
+                    personnalisée d&apos;entreprises.
                   </h2>
                 </div>
                 <div>
@@ -81,7 +81,7 @@ const Solutions = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-8">
                     Création de revenus complémentaires, placements financiers
-                    transparents et gestion d'actifs avec une clarté totale sur
+                    transparents et gestion d&apos;actifs avec une clarté totale sur
                     notre rémunération.
                   </h2>
                 </div>
@@ -104,7 +104,7 @@ const Solutions = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-8">
                     Optimisation fiscale, notamment via le Girardin industriel,
-                    les investissements en bois et forêts, et d'autres
+                    les investissements en bois et forêts, et d&apos;autres
                     dispositifs adaptés.
                   </h2>
                 </div>
@@ -138,8 +138,8 @@ const Solutions = () => {
 
             <div className="mt-20 text-center">
               <p className="text-2xl">
-                "Avec nous, chaque projet est une opportunité de conjuguer
-                sécurité, performance et innovation."
+                Avec nous, chaque projet est une opportunité de conjuguer
+                sécurité, performance et innovation.
               </p>
             </div>
           </div>

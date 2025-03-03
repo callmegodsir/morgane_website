@@ -19,8 +19,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-4">
             <h1 className="text-5xl font-bold mb-8">
-              "Construisons ensemble un patrimoine durable.
-              Votre avenir financier, notre priorité."
+              Construisons ensemble un patrimoine durable.
+              Votre avenir financier, notre priorité.
             </h1>
             <p className="text-xl">
               Chez MPV INVEST, nous mettons à votre service une expertise reconnue dans la gestion de patrimoine pour optimiser vos investissements et assurer un avenir financier serein.
@@ -65,7 +65,7 @@ const Home = () => {
             </div>
             <div className="p-6">
               <h3 className="text-2xl font-bold mb-4">Innovation et anticipation</h3>
-              <p className="text-gray-600">Nos conseils intègrent les dernières opportunités en matière d'investissement</p>
+              <p className="text-gray-600">Nos conseils intègrent les dernières opportunités en matière d&apos;investissement</p>
             </div>
           </div>
         </div>

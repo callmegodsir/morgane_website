@@ -80,7 +80,7 @@ const Partenaires = () => {
 
       <div className="py-16 px-4 max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-8">
-          "Une alliance d'excellence pour vos investissements"
+          &quot;Une alliance d&apos;excellence pour vos investissements&quot;
         </h1>
 
         {/* Sections thématiques */}
@@ -122,18 +122,19 @@ const Partenaires = () => {
         <div className="mt-20 space-y-16">
           <div className="text-center">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              "Chez MPV INVEST, nous collaborons avec des partenaires de renom
-              pour offrir les meilleures solutions d'investissement. Ces
-              alliances stratégiques nous permettent de vous proposer des
-              opportunités exclusives adaptées à vos objectifs."
+              &quot;Chez MPV INVEST, nous collaborons avec des partenaires de
+              renom pour offrir les meilleures solutions d&apos;investissement.
+              Ces alliances stratégiques nous permettent de vous proposer des
+              opportunités exclusives adaptées à vos objectifs.&quot;
             </p>
           </div>
 
           <div className="bg-blue-50 p-8 rounded-xl">
             <h3 className="text-2xl font-bold mb-4">Engagement qualité</h3>
             <p className="text-gray-600">
-              "Tous nos partenaires sont sélectionnés selon des critères stricts
-              de performance, transparence et conformité réglementaire."
+              &quot;Tous nos partenaires sont sélectionnés selon des critères
+              stricts de performance, transparence et conformité
+              réglementaire.&quot;
             </p>
           </div>
         </div>
