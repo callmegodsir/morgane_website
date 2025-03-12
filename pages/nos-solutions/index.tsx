@@ -81,8 +81,8 @@ const Solutions = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-8">
                     Création de revenus complémentaires, placements financiers
-                    transparents et gestion d&apos;actifs avec une clarté totale sur
-                    notre rémunération.
+                    transparents et gestion d&apos;actifs avec une clarté totale
+                    sur notre rémunération.
                   </h2>
                 </div>
                 <div>
