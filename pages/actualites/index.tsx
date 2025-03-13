@@ -1,8 +1,8 @@
-
 import Head from "next/head";
 import Header from "@/components/Header";
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
+import { useEffect } from "react";
 
 interface PDFDocument {
   id: string;
@@ -17,39 +17,47 @@ interface PDFDocument {
 // ou à chaque requête en mode développement
 export async function getStaticProps() {
   try {
-    const dbPath = path.join(process.cwd(), 'public', 'pdfs', 'database.json');
+    const dbPath = path.join(process.cwd(), "public", "pdfs", "database.json");
     let pdfDocuments: PDFDocument[] = [];
-    
+
     if (fs.existsSync(dbPath)) {
-      const dbContent = fs.readFileSync(dbPath, 'utf8');
+      const dbContent = fs.readFileSync(dbPath, "utf8");
       pdfDocuments = JSON.parse(dbContent);
     }
-    
+
     return {
       props: {
-        pdfDocuments
+        pdfDocuments,
       },
       // Régénérer la page toutes les heures (optionnel)
-      revalidate: 3600
+      revalidate: 3600,
     };
   } catch (error) {
     console.error("Erreur lors de la récupération des documents:", error);
     return {
       props: {
-        pdfDocuments: [] as PDFDocument[]
-      }
+        pdfDocuments: [] as PDFDocument[],
+      },
     };
   }
 }
 
-export default function Actualites({ pdfDocuments }: { pdfDocuments: PDFDocument[] }) {
+export default function Actualites({
+  pdfDocuments,
+}: {
+  pdfDocuments: PDFDocument[];
+}) {
+  useEffect(() => {
+    // Placez ici le code qui nécessite le router
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center p-4">
-      <Header/>
+      <Header />
       <Head>
         <title>Actualités</title>
       </Head>
-      
+
       <h1 className="text-2xl font-bold mb-6">Actualités</h1>
 
       {pdfDocuments.length === 0 ? (
@@ -63,9 +71,7 @@ export default function Actualites({ pdfDocuments }: { pdfDocuments: PDFDocument
               key={doc.id}
               className="p-4 border rounded shadow-sm hover:shadow-md transition-shadow"
             >
-              <h2 className="text-xl font-semibold mb-4">
-                {doc.title}
-              </h2>
+              <h2 className="text-xl font-semibold mb-4">{doc.title}</h2>
               <p className="text-sm text-gray-500 mb-4">
                 Ajouté le {new Date(doc.uploadDate).toLocaleDateString()}
               </p>
@@ -88,7 +94,7 @@ export default function Actualites({ pdfDocuments }: { pdfDocuments: PDFDocument
                       Télécharger
                     </a>
                   </div>
-                  
+
                   <div className="border rounded">
                     <iframe
                       src={`${doc.path}#toolbar=0&navpanes=0`}

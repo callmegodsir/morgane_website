@@ -1,10 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
-export default function Dashboard() {
+const Dashboard = () => {
   const [title, setTitle] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
+  const [isClient, setIsClient] = useState(false);
+
+  // Déplacer useRouter en dehors de la condition
+  const router = useRouter();
+
+  // Vérifier si nous sommes côté client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const hash = router?.query?.hash;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +43,11 @@ export default function Dashboard() {
       setMessage("Erreur lors de l'upload du fichier");
     }
   };
+
+  // Afficher un état de chargement jusqu'à ce que le client soit prêt
+  if (!isClient || !router?.isReady) {
+    return <div>Chargement...</div>;
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -69,4 +87,8 @@ export default function Dashboard() {
       </form>
     </div>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Dashboard), {
+  ssr: false,
+});
