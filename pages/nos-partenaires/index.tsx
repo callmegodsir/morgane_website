@@ -1,4 +1,3 @@
-// app/partenaires/page.tsx
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -19,43 +18,46 @@ import Logo12 from "@/public/partenaires/logo-12.webp";
 import Logo13 from "@/public/partenaires/logo-13.webp";
 import Logo14 from "@/public/partenaires/logo-14.webp";
 import Logo15 from "@/public/partenaires/logo-15.webp";
-
 const Partenaires = () => {
-  // Sections principales
+  // Sections principales avec leurs logos associés
   const sections = [
     {
       title:
         "Private Equity : Maximisez vos investissements avec les leaders du marché",
       content:
         "Nous travaillons avec des acteurs majeurs du private equity, réputés pour leur expertise et leurs performances exceptionnelles. Nos partenaires incluent :",
+      logos: [1, 2, 3, 4, 5, 6], // IDs des logos à afficher
     },
     {
       title:
         "Assurantiel : Protégez votre avenir avec des partenaires de confiance",
       content:
         "La protection de votre patrimoine et de votre avenir passe par des solutions assurantielles performantes en France et au Luxembourg. Nous collaborons avec :",
+      logos: [7, 8, 9], // IDs des logos à afficher
     },
     {
       title:
         "Fiscalite : Des solutions pour alléger vos charges et maximiser vos revenus",
       content:
         "Grâce à nos partenaires, nous vous offrons des dispositifs innovants pour optimiser votre fiscalité :",
+      logos: [10, 11, 12, 9], // IDs des logos à afficher
     },
     {
       title:
         "Immobilier & SCPI : Des investissements immobiliers accessibles et performants",
       content:
         "Pour diversifier votre patrimoine grâce à l'immobilier : Monuments Historiques, Malraux, Démembrement de propriété, SCPI…",
+      logos: [14,15], // IDs des logos à afficher
     },
     {
       title:
         "Cryptomonnaies : Le choix d'un partenaire en cryptomonnaies : une décision réfléchie",
       content:
         "Dans un domaine aussi exigeant et en constante évolution que celui des cryptomonnaies, choisir un partenaire de confiance n'est pas une tâche aisée. Cela demande une évaluation minutieuse des performances, une transparence irréprochable, et un respect rigoureux des réglementations en vigueur. Après une analyse approfondie, notre choix s'est porté sur Mon Livret C, non seulement pour ses performances exceptionnelles, mais également pour la solidité de ses engagements en matière de conformité. Mon Livret C s'est distingué en réussissant avec brio plusieurs contrôles menés par l'Autorité des Marchés Financiers (AMF). Ces audits rigoureux attestent de sa fiabilité, de sa conformité aux standards les plus élevés, et de son engagement envers la protection des utilisateurs. Ce double critère de performance et de sécurité a été déterminant dans notre décision. En collaborant avec Mon Livret C, nous sommes convaincus de pouvoir offrir à nos clients une expérience alliant innovation, stabilité, et sérénité, tout en respectant les réglementations du marché.",
+      logos: [13], // IDs des logos à afficher
     },
   ];
 
-  // Liste des logos avec imports directs
   const partnerLogos = [
     { id: 1, src: Logo1, alt: "Partenaire 1" },
     { id: 2, src: Logo2, alt: "Partenaire 2" },
@@ -88,34 +90,31 @@ const Partenaires = () => {
           {sections.map((section, index) => (
             <div key={index} className="border-l-4 border-blue-600 pl-6">
               <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
-              <p className="text-gray-600 max-w-3xl">{section.content}</p>
+              <p className="text-gray-600 max-w-3xl mb-6">{section.content}</p>
+
+              {/* Logos pour chaque section */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+                {section.logos.map((logoId) => {
+                  const logo = partnerLogos.find((l) => l.id === logoId);
+                  return logo ? (
+                    <div
+                      key={logo.id}
+                      className="flex items-center justify-center p-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow h-24"
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={200}
+                        height={100}
+                        className="object-contain max-h-14"
+                        placeholder="blur"
+                      />
+                    </div>
+                  ) : null;
+                })}
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Grille de logos */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Nos partenaires institutionnels
-          </h3>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {partnerLogos.map((logo) => (
-              <div
-                key={logo.id}
-                className="flex items-center justify-center p-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow h-32"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120}
-                  height={60}
-                  className="object-contain max-h-16"
-                  placeholder="blur"
-                />
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Contenu additionnel */}
@@ -144,5 +143,4 @@ const Partenaires = () => {
     </div>
   );
 };
-
 export default Partenaires;
