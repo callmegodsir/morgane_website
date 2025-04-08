@@ -1,10 +1,5 @@
-import mongoose from "mongoose";
-import toJSON from "./plugins/toJSON";
-
-export interface IUser extends mongoose.Document {
-  email: string;
-  password: string;
-}
+import mongoose from 'mongoose';
+import toJSON from './plugins/toJSON';
 
 // USER SCHEMA
 const userSchema = new mongoose.Schema(
@@ -18,8 +13,6 @@ const userSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
       private: true,
-      required: true,
-      unique: true,
     },
     image: {
       type: String,
@@ -28,19 +21,15 @@ const userSchema = new mongoose.Schema(
     customerId: {
       type: String,
       validate(value: string) {
-        return value.includes("cus_");
+        return value.includes('cus_');
       },
     },
     // Used in the Stripe webhook. should match a plan in config.js file.
     priceId: {
       type: String,
       validate(value: string) {
-        return value.includes("price_");
+        return value.includes('price_');
       },
-    },
-    password: {
-      type: String,
-      required: true,
     },
   },
   {
@@ -52,5 +41,4 @@ const userSchema = new mongoose.Schema(
 // add plugin that converts mongoose to json
 userSchema.plugin(toJSON);
 
-export default mongoose.models.User ||
-  mongoose.model<IUser>("User", userSchema);
+export default mongoose.models.User || mongoose.model('User', userSchema);

@@ -2,11 +2,11 @@ import themes from "daisyui/src/theming/themes.js";
 
 const config = {
   // REQUIRED
-  appName: "Recrutement-Success",
+  appName: "mpv-invest.com",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   appDescription: "Trait d’union entre vos recrutements et votre succès.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "recrutement-success.com",
+  domainName: "mpv-invest.com",
 
   stripe: {
     plans: [

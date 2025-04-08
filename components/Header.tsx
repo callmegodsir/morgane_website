@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import logo from "../public/MPVlogo.webp.jpg";
+import logo from "../public/MPVlogo.webp";
 
 const navigation = [
   { name: "Accueil", href: "/" },
