@@ -32,13 +32,13 @@ const Footer = () => {
               <Link href="/" className="text-sm text-gray-300 hover:text-white">
                 Accueil
               </Link>
-              <Link href="/" className="text-sm text-gray-300 hover:text-white">
+              <Link href="/nos-solutions" className="text-sm text-gray-300 hover:text-white">
                 Nos solutions
               </Link>
-              <Link href="/" className="text-sm text-gray-300 hover:text-white">
+              <Link href="/nos-partenaires" className="text-sm text-gray-300 hover:text-white">
                 Nos partenaires
               </Link>
-              <Link href="/" className="text-sm text-gray-300 hover:text-white">
+              <Link href="/actualites" className="text-sm text-gray-300 hover:text-white">
                 Actualités
               </Link>
             </div>
