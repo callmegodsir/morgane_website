@@ -67,7 +67,7 @@ export default function Dashboard() {
         </div>
         
         <div>
-          <h2 className="text-xl font-semibold mb-4">Galerie d'images</h2>
+          <h2 className="text-xl font-semibold mb-4">Galerie d&apos;images</h2>
           {loading ? (
             <p>Chargement des images...</p>
           ) : (

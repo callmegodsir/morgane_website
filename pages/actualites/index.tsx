@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import ImageGallery from '@/components/ImageGallery';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function Actualites() {
   const [images, setImages] = useState([]);
@@ -26,7 +28,9 @@ export default function Actualites() {
 
   return (
     <Layout>
+       <Header/>
       <div className="max-w-4xl mx-auto">
+       
         <h1 className="text-3xl font-bold my-6">Actualités</h1>
         
         {loading ? (
@@ -40,6 +44,7 @@ export default function Actualites() {
           </>
         )}
       </div>
+      <Footer/>
     </Layout>
   );
 }

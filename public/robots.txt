@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://recrutement-success.com
+Host: https://mpv-invest.com
 
 # Sitemaps
-Sitemap: https://recrutement-success.com/sitemap.xml
+Sitemap: https://mpv-invest.com/sitemap.xml

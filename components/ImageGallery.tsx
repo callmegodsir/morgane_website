@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-interface Image {
+// Renommer l'interface pour éviter le conflit avec le composant Image de next/image
+interface ImageItem {
   _id: string;
   path: string;
   title: string;
@@ -10,7 +11,7 @@ interface Image {
 }
 
 interface ImageGalleryProps {
-  images: Image[];
+  images: ImageItem[];
   onImageDeleted?: (imageId: string) => void;
   isAdmin?: boolean;
 }
@@ -53,7 +54,7 @@ export default function ImageGallery({
 
   return (
     <div className="flex flex-col gap-8">
-      {images.map((image: Image) => (
+      {images.map((image: ImageItem) => (
         <div
           key={image._id}
           className="bg-white shadow-lg rounded-md overflow-hidden w-full"
@@ -62,7 +63,7 @@ export default function ImageGallery({
           <div className="p-4 bg-gray-50 border-b">
             <h3 className="font-bold text-xl text-center">{image.title}</h3>
           </div>
-          
+
           {/* Container pour l'image en format A4 */}
           <div className="relative aspect-[1/1.414] w-full">
             <Image
@@ -74,7 +75,7 @@ export default function ImageGallery({
               priority
             />
           </div>
-          
+
           {/* Footer avec description et contrôles */}
           <div className="p-4">
             {image.description && (
@@ -84,7 +85,7 @@ export default function ImageGallery({
               <p className="text-gray-500 text-sm">
                 {new Date(image.createdAt).toLocaleDateString()}
               </p>
-              
+
               {isAdmin && (
                 <button
                   onClick={() => handleDelete(image._id)}
