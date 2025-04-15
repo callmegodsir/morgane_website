@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import homepage from "../public/homepage.webp.jpg";
+import homepage from "../public/IMG_6713-2.webp";
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
