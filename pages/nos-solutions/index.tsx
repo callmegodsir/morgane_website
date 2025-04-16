@@ -128,12 +128,7 @@ const Solutions = () => {
               avenir durable et aligné sur vos aspirations.
             </div>
 
-            <div className="mt-20 text-center">
-              <p className="text-2xl">
-                Avec nous, chaque projet est une opportunité de conjuguer
-                sécurité, performance et innovation.
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>
