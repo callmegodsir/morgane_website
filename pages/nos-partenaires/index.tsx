@@ -81,7 +81,7 @@ const Partenaires = () => {
       <Header />
 
       <div className="py-16 px-4 max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">
+        <h1 className="text-4xl  text-center mb-8">
           &quot;Une alliance d&apos;excellence pour vos investissements&quot;
         </h1>
 
@@ -89,7 +89,7 @@ const Partenaires = () => {
         <div className="space-y-16 mt-12">
           {sections.map((section, index) => (
             <div key={index} className="border-l-4 border-blue-600 pl-6">
-              <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+              <h2 className="text-2xl  mb-4">{section.title}</h2>
               <p className="text-gray-600 max-w-3xl mb-6">{section.content}</p>
 
               {/* Logos pour chaque section */}
@@ -129,7 +129,7 @@ const Partenaires = () => {
           </div>
 
           <div className="bg-blue-50 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4">Engagement qualité</h3>
+            <h3 className="text-2xl  mb-4">Engagement qualité</h3>
             <p className="text-gray-600">
               &quot;Tous nos partenaires sont sélectionnés selon des critères
               stricts de performance, transparence et conformité

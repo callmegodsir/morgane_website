@@ -33,7 +33,7 @@ function Navbar() {
             />
           </Link>
           <div className="flex flex-col text-white">
-            <div className="text-xl font-bold">
+            <div className="text-xl ">
               MPV INVEST - Ingénierie Patrimoniale
             </div>
             <div className="text-sm hidden md:block">

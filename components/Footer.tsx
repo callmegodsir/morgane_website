@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Section logo et description */}
           <div className="w-full md:w-1/2">
             <div className="flex flex-col">
-              <div className="text-xl font-bold">
+              <div className="text-xl ">
                 MPV INVEST - Ingénierie Patrimoniale
               </div>
               <div className="text-sm mt-2">
@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Section liens */}
           <div className="w-full md:w-1/4">
-            <div className="font-semibold text-lg mb-4">Navigation</div>
+            <div className=" text-lg mb-4">Navigation</div>
             <div className="flex flex-col gap-3">
               <Link href="/" className="text-sm text-gray-300 hover:text-white">
                 Accueil

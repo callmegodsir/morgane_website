@@ -84,7 +84,7 @@ const Contact = () => {
                   LinkedIn
                 </Link>
                 <Link
-                  href="https://www.instagram.com/morganepointetvitti/profilecard/?igsh=MW5tNWxlM2N0dHlkdQ=="
+                  href="https://www.instagram.com/mopointetvitti/"
                   className="bg-pink-100 px-4 py-2 rounded-lg hover:bg-pink-200 flex items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
