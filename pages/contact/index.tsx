@@ -17,7 +17,7 @@ const Contact = () => {
                 Morgane POINTET-VITTI
               </h2>
               <p className="text-gray-600 mb-4">
-                Membre Anacofi - CIF - ORIAS : 23008521 - CIF : E010620 - Carte
+                Membre Anacofi <br /> - ORIAS : 23008521 <br />- CIF : E010620 <br />- Carte
                 T : CPI75012022000000045
               </p>
               <div className="space-y-4">
