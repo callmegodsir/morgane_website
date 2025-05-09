@@ -4,7 +4,9 @@ import { useState } from "react";
 // Renommer l'interface pour éviter le conflit avec le composant Image de next/image
 interface ImageItem {
   _id: string;
-  path: string;
+  url?: string;
+  path?: string;
+  fileId?: string;
   title: string;
   description?: string;
   createdAt: string;
@@ -52,6 +54,13 @@ export default function ImageGallery({
     }
   };
 
+  // Fonction pour déterminer la source de l'image
+  const getImageSrc = (image: ImageItem) => {
+    // Priorité: url > /api/image/_id > path
+    if (image.url) return image.url;
+    return `/api/image/${image._id}`;
+  };
+
   return (
     <div className="flex flex-col gap-8">
       {images.map((image: ImageItem) => (
@@ -67,7 +76,7 @@ export default function ImageGallery({
           {/* Container pour l'image en format A4 */}
           <div className="relative aspect-[1/1.414] w-full">
             <Image
-              src={image.path}
+              src={getImageSrc(image)}
               alt={image.title}
               fill
               style={{ objectFit: "contain" }}
@@ -81,11 +90,7 @@ export default function ImageGallery({
             {image.description && (
               <p className="text-gray-700 mb-3">{image.description}</p>
             )}
-            <div className="flex justify-between items-center">
-              <p className="text-gray-500 text-sm">
-                {new Date(image.createdAt).toLocaleDateString()}
-              </p>
-
+            <div className="flex justify-end items-center">
               {isAdmin && (
                 <button
                   onClick={() => handleDelete(image._id)}

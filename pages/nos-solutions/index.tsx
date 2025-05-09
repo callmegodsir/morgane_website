@@ -8,19 +8,23 @@ const Solutions = () => {
       <Header />
 
       {/* En-tête Solutions */}
-      <div className="relative h-[400px] md:h-[500px]">
-        <Image
-          src={homepage}
-          alt="Nos solutions - En-tête"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-5xl font-bold ">Nos solutions</h1>
+      <div className="relative h-[400px] md:h-[800px] flex bg-black -mt-16">
+        <div className="hidden md:block w-1/4"></div>
+        <div className="w-full md:w-1/2 relative">
+          <Image
+            src={homepage}
+            alt="Nos solutions - En-tête"
+            fill
+            className="object-contain"
+            priority
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center px-4">
+              <h1 className="text-5xl font-bold text-white">Nos solutions</h1>
+            </div>
           </div>
         </div>
+        <div className="hidden md:block w-1/4"></div>
       </div>
 
       {/* Contenu Solutions */}
@@ -50,18 +54,18 @@ const Solutions = () => {
             </p>
           </div>
 
-          <div className="prose-xl mt-20">
+          <div className="prose-lg mt-20">
             <div className="space-y-20">
               {/* Section 1 */}
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Création sociétale, avec une structuration stratégique et
                     personnalisée d&apos;entreprises.
                   </h2>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Préparation successorale et accompagnement dans les projets
                     de transmission patrimoniale.
                   </h2>
@@ -71,14 +75,14 @@ const Solutions = () => {
               {/* Section 2 */}
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Création de revenus complémentaires, placements financiers
                     transparents et gestion d&apos;actifs avec une clarté totale
                     sur notre rémunération.
                   </h2>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Assurantiels, pour protéger efficacement le patrimoine et
                     sécuriser les actifs.
                   </h2>
@@ -88,13 +92,13 @@ const Solutions = () => {
               {/* Section 3 */}
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Private equity, permettant une diversification stratégique
                     des investissements.
                   </h2>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Optimisation fiscale, notamment via le Girardin industriel,
                     les investissements en bois et forêts, et d&apos;autres
                     dispositifs adaptés.
@@ -103,13 +107,13 @@ const Solutions = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Innovations financières, avec une expertise ouverte sur les
                     opportunités offertes par les cryptoactifs.
                   </h2>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-6">
-                  <h2 className="text-3xl  mb-8">
+                  <h2 className="text-xl md:text-2xl mb-8 text-justify">
                     Immobilier spécialisé, incluant les dispositifs Malraux,
                     monuments historiques, démembrement, SCPI et stratégies
                     personnalisées.
@@ -127,8 +131,6 @@ const Solutions = () => {
               de conjuguer sécurité, performance et innovation, pour bâtir un
               avenir durable et aligné sur vos aspirations.
             </div>
-
-            
           </div>
         </div>
       </div>

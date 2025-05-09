@@ -14,10 +14,16 @@ export default async function handler(
       const db = client.db();
       const images = await db
         .collection("images")
-        .find()
+        .find({}, { projection: { data: 0 } }) // Exclure les données binaires
         .sort({ createdAt: -1 })
         .toArray();
-      return res.status(200).json(images);
+
+      const imagesWithUrls = images.map((image) => ({
+        ...image,
+        url: `/api/image/${image._id}`,
+      }));
+
+      return res.status(200).json(imagesWithUrls);
     } catch (error) {
       return res
         .status(500)
@@ -32,9 +38,13 @@ export default async function handler(
 
       const client = await clientPromise;
       const db = client.db();
+
       const id =
         typeof req.query.id === "string" ? req.query.id : req.query.id[0];
+
+      // Supprimer directement l'image de la collection
       await db.collection("images").deleteOne({ _id: new ObjectId(id) });
+
       return res.status(200).json({ message: "Image supprimée avec succès" });
     } catch (error) {
       return res
