@@ -51,7 +51,7 @@ const Partenaires = () => {
     },
     {
       title:
-        "Cryptomonnaies : Le choix d'un partenaire en cryptomonnaies : une décision réfléchie",
+        "Cryptomonnaies : Le choix d'un partenaire en cryptomonnaies : <br /> une décision réfléchie",
       content:
         "Dans un domaine aussi exigeant et en constante évolution que celui des cryptomonnaies, choisir un partenaire de confiance n'est pas une tâche aisée. Cela demande une évaluation minutieuse des performances, une transparence irréprochable, et un respect rigoureux des réglementations en vigueur. Après une analyse approfondie, notre choix s'est porté sur Mon Livret C, non seulement pour ses performances exceptionnelles, mais également pour la solidité de ses engagements en matière de conformité. Mon Livret C s'est distingué en réussissant avec brio plusieurs contrôles menés par l'Autorité des Marchés Financiers (AMF). Ces audits rigoureux attestent de sa fiabilité, de sa conformité aux standards les plus élevés, et de son engagement envers la protection des utilisateurs. Ce double critère de performance et de sécurité a été déterminant dans notre décision. En collaborant avec Mon Livret C, nous sommes convaincus de pouvoir offrir à nos clients une expérience alliant innovation, stabilité, et sérénité, tout en respectant les réglementations du marché.",
       logos: [13], // IDs des logos à afficher
@@ -97,7 +97,10 @@ const Partenaires = () => {
         <div className="space-y-16 mt-12">
           {sections.map((section, index) => (
             <div key={index} className="border-l-4 border-blue-600 pl-6">
-              <h2 className="text-2xl  mb-4">{section.title}</h2>
+              <h2
+                className="text-lg mb-4"
+                dangerouslySetInnerHTML={{ __html: section.title }}
+              ></h2>
               <p className="text-gray-600 max-w-3xl mb-6 text-justify">
                 {section.content}
               </p>
